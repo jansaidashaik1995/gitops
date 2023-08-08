@@ -77,7 +77,7 @@ jobs:
           git config --global user.email "pavan@cloudearl.com"
           git config --global user.name "pavanmohan"
           echo ${{ github.sha }}
-          sed -i "s#pavanmohan/promote-release:#pavanmohan/promote-release:${{ github.sha }}#g" deployment.yaml
+           sed -i "s#pavanmohan/promote-release:[^ ]*#pavanmohan/promote-release:${{ github.sha }}#g" deployment.yaml
           git add -A
           git commit -am "Update image for - ${{ github.sha }}"
       - run: echo ${{ github }}
