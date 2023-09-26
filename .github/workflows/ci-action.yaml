@@ -56,7 +56,7 @@ jobs:
           # relative path to the place where source code with Dockerfile is located
           context: ./
           tags: |
-            pavanmohan/monorepo:tagname:${{ github.sha }}
+            pavanmohan/monorepo:${{ github.sha }}
           # build on feature branches, push only on main branch
           push: ${{ github.ref == 'refs/heads/master' }}
 
